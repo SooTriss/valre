@@ -33,9 +33,36 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.9);
+  transform: scale(0.99);
 }
-
+.flowersrbg {
+  transform: scale(0.5);
+  position: relative;
+  left: 600px; bottom: 200px
+  
+}
+.flowerslbg {
+  transform: scale(0.4);
+  position: relative;
+  right: 500px; bottom: 300px
+  
+}
+.bg_grass_right {
+  position: relative;
+  transform: scale(1.2);
+  left: 500px; bottom: 100px;
+}
+.bg_grass_left {
+  position: relative;
+  transform: scale(1.1);
+  right: 400px; bottom: 150px;
+}
+.bg_grass_center {
+  position: relative;
+  transform: scale(1.1);
+  bottom: 150px;
+  z-index: -1;
+}
 .flower {
   position: absolute;
   bottom: 10vmin;
@@ -90,7 +117,7 @@ body {
   animation: blooming-leaf-left var(--fl-speed) 1.3s backwards;
 }
 .flower--3 {
-  left: 50%;
+  left: 30%;
   transform: rotate(-15deg);
   animation: moving-flower-3 4s linear infinite;
 }
@@ -296,8 +323,7 @@ body {
   animation: moving-grass 2s linear infinite;
 }
 .flower__grass--2 {
-  left: 2vmin;
-  bottom: 10vmin;
+  
   transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
   opacity: 0.8;
   z-index: 0;
@@ -492,7 +518,14 @@ body {
   border-top-left-radius: 100%;
   border-left: 2vmin solid #07974f;
   background-image: linear-gradient(to bottom, transparent, var(--dark-color) 60%);
-  -webkit-mask-image: linear-gradient(to top, transparent 30%, #07976c 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 40%, #07976c 80%);
+}
+.flower__g-right .leafbg {
+  width: 30vmin;
+  height: 30vmin;
+  border-top-left-radius: 50%;
+  border-left: 1vmin solid #07974f;
+  -webkit-mask-image: linear-gradient(to top, transparent 40%, #07976c 80%);
 }
 .flower__g-right--1 {
   animation: flower-g-right-ans 2.5s linear infinite;
@@ -829,15 +862,15 @@ body {
 }
 .long-g .leaf--1 {
   --w: 5vmin;
-  --h: 60vmin;
+  --h: 40vmin;
   animation: leaf-ans-1 4s linear infinite;
 }
 .long-g .leaf--2 {
-  --w: 10vmin;
+  --w: 8vmin;
   --h: 40vmin;
   left: -0.5vmin;
-  bottom: 5vmin;
-  transform-origin: bottom left;
+  bottom: 1vmin;
+  transform-origin: bottom right;
   transform: rotateY(-180deg);
   animation: leaf-ans-2 3s linear infinite;
 }
@@ -850,20 +883,70 @@ body {
   transform: rotate(-10deg) rotateY(-180deg);
   animation: leaf-ans-3 3s linear infinite;
 }
-.words {
+.lword {
   position: relative;
-  top: 60px;
-  color: #ffa7f0;  
+  top: 25px;
+  right: 25px;
+  color: #ffa7f0;
+  text-shadow: 1px 1px 2px red, 0 0 1em pink, 0 0 0.2em rgb(255, 0, 179);
+  animation: fadeIn 10s;  
+}
+.rword {
+  position: relative;
+  top: 70px;
+  right: 40px;
+  color: #ffa7f0;
+  text-shadow: 1px 1px 2px red, 0 0 1em pink, 0 0 0.2em rgb(255, 0, 179);
+  animation: fadeIn 10s;  
 }
 .words_center {
   position: relative;
-  top: 120px;
+  
+  right: 40px;
+  top: 160px;
   color: #ffa7f0;
+  
+  text-shadow: 1px 1px 2px red, 0 0 1em pink, 0 0 0.2em rgb(255, 0, 179);
+  animation: fadeIn 11s;
 }
 .words_top {
   position: relative;
-  top: -300px;
+  right: 40px;
+  top: -200px;
   color: #ffa7f0;
+  text-shadow: 1px 1px 2px red, 0 0 1em pink, 0 0 0.2em rgb(255, 0, 179);
+  animation: fadeIn 8s;
+}
+.heart-button {
+  position: relative;
+  top: 150px;
+  right: 15px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: red;
+  background: none;
+  border: none;
+  cursor: pointer; 
+  outline: none; 
+  text-shadow: 1px 1px 2px red, 0 0 1em pink, 0 0 0.2em rgb(255, 0, 179);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+
+.heart-button:hover {
+  filter: drop-shadow(0 0 0.75rem crimson);
+  transform: translateY(-3px);
+}
+
+
+.heart-button:active {
+  transform: translateY(0); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+@keyframes fadeIn {
+  0% { opacity: 0;}
+  200% { opacity: 1;}
 }
 @keyframes leaf-ans-1 {
   0%, 100% {
