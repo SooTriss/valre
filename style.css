@@ -254,12 +254,14 @@ body {
   top: 0;
   transform-origin: left;
   transform: rotate(70deg) rotateY(30deg) scale(0.6);
+  will-change: transform;
 }
 .flower__line__leaf--6 {
   top: -2%;
   left: -450%;
   transform-origin: right;
   transform: rotate(-70deg) rotateY(30deg) scale(0.6);
+  will-change: transform;
 }
 .flower__light {
   position: absolute;
@@ -270,6 +272,7 @@ body {
   border-radius: 50%;
   filter: blur(0.2vmin);
   animation: light-ans 4s linear infinite backwards;
+  will-change: opacity, transform;
 }
 .flower__light:nth-child(odd) {
   background-color: #ff23ed;
@@ -855,6 +858,7 @@ body {
   border-left: 2vmin solid var(--c);
   -webkit-mask-image: linear-gradient(to top, transparent 20%, var(--dark-color));
   transform-origin: bottom center;
+  
 }
 .long-g .leaf--0 {
   left: 2vmin;
@@ -873,6 +877,7 @@ body {
   transform-origin: bottom right;
   transform: rotateY(-180deg);
   animation: leaf-ans-2 3s linear infinite;
+  will-change: transform;
 }
 .long-g .leaf--3 {
   --w: 5vmin;
@@ -882,6 +887,7 @@ body {
   transform-origin: bottom left;
   transform: rotate(-10deg) rotateY(-180deg);
   animation: leaf-ans-3 3s linear infinite;
+  will-change: transform;
 }
 .lword {
   position: relative;
@@ -931,6 +937,14 @@ body {
   text-shadow: 1px 1px 2px red, 0 0 1em pink, 0 0 0.2em rgb(255, 0, 179);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   display: inline-block;
+}
+.heart{
+  position: relative;
+  right: 20px;
+  top: -150px;
+  color: #ffa7f0;
+  text-shadow: 1px 1px 2px red, 0 0 1em pink, 0 0 0.2em rgb(255, 0, 179);
+  animation: fadeIn 8s;
 }
 
 
